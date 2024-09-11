@@ -1,0 +1,45 @@
+
+<div class="wrapper">
+    <div class="logo">
+    </div>
+    <div class="text-center mt-4 name">
+        Register
+    </div>
+
+    <form [formGroup]="form" (submit)="submit()">
+
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" formControlName="firstname" class="form-control" id="FirstName" placeholder="FirstName">
+        </div>
+
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" formControlName="lastname" class="form-control" id="LastName" placeholder="LastName">
+        </div>
+
+        
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="email" formControlName="email" class="form-control" id="Email" placeholder="Email">
+        </div>
+
+
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" formControlName="username" class="form-control" id="userName" placeholder="Username">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" formControlName="password" class="form-control" id="pwd" placeholder="Password">
+        </div>
+        
+        <button class="btn mt-3">Register</button>
+    </form>
+
+
+    
+    <div class="text-center fs-6">
+        <a [routerLink]="['/Home']" routerLinkActive="router-link-active" >Forget password?</a> or <a [routerLink]="['/Login']" routerLinkActive="router-link-active" >Sign in</a>
+    </div>
+  </div>
