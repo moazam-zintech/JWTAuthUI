@@ -18,6 +18,31 @@
         <button class="btn mt-3">Login</button>
     </form>
     <div class="text-center fs-6">
-        <a [routerLink]="['/Home']" routerLinkActive="router-link-active" >Forget password?</a> or <a [routerLink]="['/Register']" routerLinkActive="router-link-active" >Register</a>
+        <a id="forget" data-toggle="modal" data-target="#exampleModal">Forget password?</a> or <a [routerLink]="['/Register']" routerLinkActive="router-link-active" >Register</a>
     </div>
   </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModelLabel">Forgot Password?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>Enter your email address to reset your password:</p>
+            <input [(ngModel)]="resetPasswordEmail" (ngModelChange)="checkValidateEmail($event)" type="email" class="form-control" placeholder="Email address" required>
+          </div>
+        
+        <small *ngIf= "!resetPasswordEmail" class="text-danger">Email is required</small>
+        <small *ngIf="!isValidEmail && resetPasswordEmail" class="text-danger">Email is invalid</small>
+        <div class="modal-footer">
+          <button type="closebutton" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" (click)="confirmToSend()" class="btn btn-primary">Send Reset Link</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,22 +1,49 @@
-<p>dashboard works!</p>
+<!DOCTYPE html>
+<html lang="en">
 
+<body>
+    <ng-container *ngIf="role==='Admin'" >
 
-<button (click)="logout()" class="btn-danger">Log out </button>
-
-<ul *ngFor="let user of users">
-    <li>{{user.userName}}</li>
-</ul>
-
-
-<nav class="navbar bg-info">
-    <div class="container-fluid">
-        <a class="navbar-brand">
-            <div>
-                <h4>
-                        Hello MR {{fullName}}
-                </h4>
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <a >Dashboard</a>
+        <a>Orders</a>
+        <a>Products</a>
+        <a>About</a>
+    </div>
+</ng-container>
+    <div class="content">
+        <div class="navbar">
+            <div class="user-info">
+                <span>Hello {{fullName}}</span> | <span>{{role}}</span>
             </div>
-        </a>
-    </div> 
-
-</nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="logout">
+                <button (click)="logout()" class="btn-danger">Log out </button>
+            </div>
+        </div>
+        <h1>Dashboard</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>User name</th>
+                    <th>Email</th>
+                </tr>
+                <tr *ngFor="let user of users">
+                    <th>{{user.firstName}}</th>
+                    <th>{{user.lastName}}</th>
+                    <th>{{user.role}}</th>
+                    <th>{{user.email}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- User names will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

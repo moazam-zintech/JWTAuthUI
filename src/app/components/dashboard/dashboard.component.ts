@@ -14,6 +14,8 @@ import { UserStoreService } from '../../Service/user-store.service';
 export class DashboardComponent implements  OnInit {
  
   public fullName: string="";
+  public role: string="";
+ 
   public users: any = [];
   constructor(private userStore:UserStoreService,private router: Router, private auth: AuthService, private api: ApiService) {
     
@@ -25,26 +27,23 @@ export class DashboardComponent implements  OnInit {
     }
     )
 
+    this.userStore.getRoleFromStore().subscribe(val=>
+    {
+      let roleFromToken=this.auth.getRoleFromToken();
+      this.role = val || roleFromToken
+    }
+
+    )
     this.userStore.getFullNameFromStore().subscribe(val=>
     {
       let fullNameFromToken=this.auth.getFullNameFromToken();
-      this.fullName = val || fullNameFromToken
-
-
-
-      console.log("Hello"+this.fullName);
-      
-      console.log("value"+val);
-
-      console.log("fulname"+fullNameFromToken);
-
+      this.fullName = fullNameFromToken
+      console.log(this.fullName)
     }
     )
-    
-
+    console.log("name is :"+this.fullName+"\nRole is:"+this.role)
   }
   logout(){
     this.auth.signOut();
   }
-
 }

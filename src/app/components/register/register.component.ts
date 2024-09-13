@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
     if (this.form.valid) {
       this.http
         .post(
-          'https://localhost:7270/api/Auth/Register',
+          'https://localhost:7295/api/Auth/Register',
           this.form.getRawValue()
         )
         .subscribe(() => this.route.navigate(['Login']));

@@ -8,6 +8,4 @@ export class loginObj
         this.userName=userName;
         this.password=password;
     }
-
-
 }

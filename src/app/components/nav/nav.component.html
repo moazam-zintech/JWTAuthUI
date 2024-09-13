@@ -3,18 +3,15 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
-
       </a>
     </div>
     <ul class="nav navbar-nav">
-          <li class="active"><a routerLink="/Home">Home</a></li>
+          <!-- <li class="active"><a routerLink="/Home">Home</a></li> -->
 
         <li *ngIf="!authenticated" ><a routerLink="/Register">Register</a></li>      
         <li *ngIf="!authenticated" ><a routerLink="/Login">Login</a></li> 
-        <li *ngIf="authenticated"><a routerLink="/Home" (click)="logout()">Logout</a></li>
-
+        <!-- <li *ngIf="authenticated"><a routerLink="/Home" (click)="logout()">Logout</a></li> -->
       </ul>  
-         
   </div>
 </nav>
 <router-outlet></router-outlet>   
