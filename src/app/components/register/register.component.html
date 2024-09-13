@@ -32,7 +32,7 @@
         <div class="form-field d-flex align-items-center">
             <span class="fas fa-key"></span>
             <input type="password" formControlName="password" class="form-control" id="pwd" placeholder="Password">
-        </div>
+        </div>  
         
         <button class="btn mt-3">Register</button>
     </form>
@@ -40,6 +40,6 @@
 
     
     <div class="text-center fs-6">
-        <a [routerLink]="['/Home']" routerLinkActive="router-link-active" >Forget password?</a> or <a [routerLink]="['/Login']" routerLinkActive="router-link-active" >Sign in</a>
+        <span style="font-size: x-small;" >if you aleardy have an account please  </span>  <a [routerLink]="['/Login']" routerLinkActive="router-link-active" >Sign in</a>
     </div>
   </div>

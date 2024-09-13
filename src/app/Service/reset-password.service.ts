@@ -19,10 +19,8 @@ private baseUrl:string="https://localhost:7295/api/Auth/"
     return this.http.post("https://localhost:7295/api/Auth/send-reset-email", JSON.stringify(data), { headers });
   }
 
-
-
    resetPassword(resetPasswordObj: ResetPassword) 
    {
-    return this.http.post<any>(`${this.baseUrl}reset-password`,resetPasswordObj);
+    return this.http.post("https://localhost:7295/api/Auth/reset-password",resetPasswordObj);
    }
 }
